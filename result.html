@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>نتيجتك</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: #f0f8ff;
+      direction: rtl;
+    }
+
+    h1 {
+      color: #333;
+      font-size: 40px;
+    }
+
+    .pass {
+      color: green;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .fail {
+      color: red;
+      font-weight: bold;
+      font-size: 24px;
+    }
+
+    .time {
+      margin-top: 20px;
+      color: #666;
+    }
+
+    img {
+      margin-top: 30px;
+      max-width: 300px;
+	  align-items: center;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 25px;
+      font-size: 18px;
+      background-color: dodgerblue;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+	  display: block; 
+      margin-left: auto; 
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>النتيجة</h1>
+  <p id="score" style="font-size: 30px; font-weight: bold;"></p>
+  <p id="status"></p>
+  <p id="datetime" class="time"></p>
+
+  <img src="" alt="نتيجة" id="result-image">
+
+  <button onclick="goBack()">رجوع للاختبار</button>
+  
+
+  <script>
+    const score = localStorage.getItem("quizScore");
+    document.getElementById("score").innerText = `${score} من 4`;
+
+    const status = document.getElementById("status");
+    const image = document.getElementById("result-image");
+
+    if (score >= 3) {
+      status.innerText = " مبرووك يااعم";
+      status.className = "pass";
+      image.src = "5.webp";
+    } else {
+      status.innerText = " ياعم بقي";
+      status.className = "fail";
+      image.src = "4.webp";
+    }
+
+    localStorage.removeItem("quizScore");
+
+    function goBack() {
+      window.location.href = "quizz.html";
+    }
+  </script>
+    <a href="index.html"><button type="button">القائمة الرئيسية</button></a>
+
+</body>
+</html>

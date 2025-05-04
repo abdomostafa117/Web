@@ -1,0 +1,178 @@
+<html><head>
+	<title>My Web</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+</head>
+<style>
+	*
+	{
+		box-sizing: border-box;
+	}
+	body
+	{
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		margin: 0%;
+	}
+	header
+	{
+		background-color: rgb(4, 110, 151);;
+		text-align: center;
+		padding: 25px;
+		color: aliceblue;
+	}
+	h2
+	{
+		text-align: center;
+		background-color: rgb(4, 110, 151);
+	}
+	li
+	{
+		text-align: center;
+		list-style: none;
+	}
+	p
+	{
+		text-align: center;
+	}
+	h3
+	{
+		background-color: aliceblue;
+		text-align: center;
+	}
+	label
+	{
+		text-align: center;
+	}
+	h4
+	{
+		text-align: center;
+		font-family: Georgia, 'Times New Roman', Times, serif;
+	}
+	button
+	{
+		background:none;
+		border: 2px solid dodgerblue;
+		width: 200px;
+		padding: 5px;
+		display: block;
+		margin: auto;
+		font-size: 1rem;
+		font-weight: 800;
+		font-size: large;
+		color: rgb(0, 0, 0);
+		cursor: pointer;
+		
+		
+		
+	}
+	img
+	{
+		display: block;
+		margin: auto;
+	}
+	input
+	{
+		accent-color: dodgerblue ;
+	}
+	span
+	{
+		background: dodgerblue;
+		height: 100%;
+		width: 0;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+		transition: 0.5s;
+	}
+	button:active
+	{
+		transform: scale(0.96) ;
+	}
+</style>
+<body>
+	<header>
+		<h1>اهلا بيك في الاختبار  </h1>
+		</nav>
+	</header>
+	
+	</main>
+	<footer>
+	</footer>
+
+
+</body></html>
+<main>
+	<section>
+		<h4>علي السريع Quiz</h4>
+		<form>
+			<style>
+				*
+				{
+					box-sizing: border-box;
+				}
+				form
+				{
+					text-align: center;
+					font-family: Arial, Helvetica, sans-serif;
+					font-weight: 1000;
+				}
+			</style>
+			<label>السوال الاول :1+1 ؟ </label><br>
+			<input type="radio" name="q1" value="a"> 3<br>
+			<input type="radio" name="q1" value="b"> 2<br>
+			<input type="radio" name="q1" value="c"> 7<br>
+			<br>
+			<label>السوال الثاني: اهم البرامج في المساحه ؟ </label><br>
+			<input type="radio" name="q2" value="a">arcgis <br>
+			<input type="radio" name="q2" value="b">survey <br>
+			<input type="radio" name="q2" value="c">autocad<br>
+			<input type="radio" name="q2" value="d">ولا حاجه<br>
+			<br>
+            <label>ليس من لغات البرمجه ؟ </label><br>
+			<input type="radio" name="q3" value="a">paython <br>
+			<input type="radio" name="q3" value="b">معرفش <br>
+			<input type="radio" name="q3" value="c">html<br>
+            <input type="radio" name="q3" value="d">java<br>
+			<br>
+			<label>لغه التنسيق</label><br>
+			<input type="radio" name="q4" value="a">java <br>
+			<input type="radio" name="q4" value="b">css<br>
+			<input type="radio" name="q4" value="c">معرفش<br>
+			<br>
+		</form>
+	</section>
+	<a href="result.html">
+		<button type="button" onclick="saveResult()">عرض النتيجة</button>
+	</a>
+	<main>
+		<section>
+		</section>
+		<section>
+			<h2>Our Services</h2>
+			<ul>
+				<li>محي الشرقاوي 010</li>
+			</ul>
+		</section>
+	
+	<section>
+		<h2>Results</h2>
+		<p>النتيجه بكرا </p>
+	</section>
+</main>
+<script>
+	function saveResult() {
+		let score = 0;
+
+		if (document.querySelector('input[name="q1"]:checked')?.value === "b") score++;
+		if (document.querySelector('input[name="q2"]:checked')?.value === "a") score++;
+		if (document.querySelector('input[name="q3"]:checked')?.value === "b") score++;
+		if (document.querySelector('input[name="q4"]:checked')?.value === "b") score++;
+		localStorage.setItem("quizScore", score);
+	}
+</script>
+
+<footer>
+	
+</footer>
+
